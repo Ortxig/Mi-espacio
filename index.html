@@ -93,5 +93,17 @@ Pega este código completo en el editor en blanco:
       button.classList.add("active");
     }
   </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://xsnctynrjamnaatrtiir.supabase.co";
+  const SUPABASE_KEY = "PEGA_AQUI_TU_CLAVE_PUBLICABLE";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  console.log("Conexión con Supabase preparada");
+</script>
 </body>
 </html>
