@@ -1,0 +1,97 @@
+Pega este código completo en el editor en blanco:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Mi Espacio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f2ed;
+      color: #42413e;
+    }
+    header {
+      padding: 35px 20px;
+      text-align: center;
+      background: #e8e1d8;
+    }
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 3px;
+      font-weight: 400;
+    }
+    header p { color: #77716a; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+    nav button {
+      border: 0;
+      border-radius: 20px;
+      padding: 12px 18px;
+      background: #fff;
+      color: #555;
+      cursor: pointer;
+    }
+    nav button.active { background: #a9b7a5; color: white; }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 25px;
+    }
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      min-height: 220px;
+      box-shadow: 0 3px 15px #00000008;
+    }
+    section h2 { font-weight: 400; }
+    .muted { color: #888; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MI ESPACIO</h1>
+    <p>Un lugar para organizar mi vida</p>
+  </header>
+
+  <nav>
+    <button class="active" onclick="showSection('entrenamientos', this)">Entrenamientos</button>
+    <button onclick="showSection('dia', this)">Mi día a día</button>
+    <button onclick="showSection('amaia', this)">Amaia</button>
+    <button onclick="showSection('economia', this)">Mi economía</button>
+  </nav>
+
+  <main>
+    <section id="content">
+      <h2>Entrenamientos</h2>
+      <p class="muted">Aquí organizaremos tus entrenamientos y progresos.</p>
+    </section>
+  </main>
+
+  <script>
+    const sections = {
+      entrenamientos: ["Entrenamientos", "Aquí organizaremos tus entrenamientos y progresos."],
+      dia: ["Mi día a día", "Aquí organizaremos tus tareas y asuntos personales."],
+      amaia: ["Amaia – Estudios y organización", "Aquí organizaremos sus estudios y tareas."],
+      economia: ["Mi economía", "Aquí organizaremos tus ingresos y gastos."]
+    };
+
+    function showSection(name, button) {
+      document.getElementById("content").innerHTML =
+        "<h2>" + sections[name][0] + "</h2><p class='muted'>" + sections[name][1] + "</p>";
+      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+    }
+  </script>
+</body>
+</html>
